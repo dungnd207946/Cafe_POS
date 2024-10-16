@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Take Away Order View -->
+        <record id="view_cafe_order_takeaway_tree" model="ir.ui.view">
+            <field name="name">cafe.order.takeaway.tree</field>
+            <field name="model">cafe.order.takeaway</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="order_number"/>
+                    <field name="customer_name"/>
+                    <field name="order_date"/>
+                    <field name="total_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_cafe_order_takeaway_form" model="ir.ui.view">
+            <field name="name">cafe.order.takeaway.form</field>
+            <field name="model">cafe.order.takeaway</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="order_number"/>
+                        <field name="customer_name"/>
+                        <field name="order_date"/>
+                        <field name="menu_items">
+                            <tree editable="bottom">
+                                <field name="menu_item_id"/>
+                                <field name="quantity"/>
+                                <field name="subtotal" readonly="1"/>
+                            </tree>
+                        </field>
+                        <field name="total_amount" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button string="Save" type="object" class="btn-primary" name="action_save"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Dine In Order View -->
+        <record id="view_cafe_order_dinein_tree" model="ir.ui.view">
+            <field name="name">cafe.order.dinein.tree</field>
+            <field name="model">cafe.order.dinein</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="order_number"/>
+                    <field name="table_id"/>
+                    <field name="order_date"/>
+                    <field name="total_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_cafe_order_dinein_form" model="ir.ui.view">
+            <field name="name">cafe.order.dinein.form</field>
+            <field name="model">cafe.order.dinein</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="order_number"/>
+                        <field name="table_id"/>
+                        <field name="order_date"/>
+                        <field name="menu_items">
+                            <tree editable="bottom">
+                                <field name="menu_item_id"/>
+                                <field name="quantity"/>
+                                <field name="subtotal" readonly="1"/>
+                            </tree>
+                        </field>
+                        <field name="total_amount" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button string="Save" type="object" class="btn-primary" name="action_save"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Actions -->
+        <record id="action_cafe_order_takeaway" model="ir.actions.act_window">
+            <field name="name">Take Away Orders</field>
+            <field name="res_model">cafe.order.takeaway</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_cafe_order_dinein" model="ir.actions.act_window">
+            <field name="name">Dine In Orders</field>
+            <field name="res_model">cafe.order.dinein</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
+

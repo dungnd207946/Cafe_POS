@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cafe_menu,cafe.menu,model_cafe_menu,base.group_user,1,1,1,1
+access_cafe_order,cafe.order,model_cafe_order,base.group_user,1,1,1,1
+access_cafe_order_takeaway,cafe.order.takeaway,model_cafe_order_takeaway,base.group_user,1,1,1,1
+access_cafe_order_dinein,cafe.order.dinein,model_cafe_order_dinein,base.group_user,1,1,1,1
+access_cafe_table,cafe.table,model_cafe_table,base.group_user,1,1,1,1
+access_cafe_order_line,cafe.order.line,model_cafe_order_line,base.group_user,1,1,1,1

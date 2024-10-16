@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu Root -->
+    <menuitem
+        id="menu_cafe_root"
+        name="Cafe"/>
+
+    <!-- Menu cho Menu Item -->
+    <menuitem
+        id="menu_cafe_menu"
+        name="Menu"
+        parent="menu_cafe_root"
+        action="action_cafe_menu"/>
+
+    <!-- Menu cho Orders -->
+    <menuitem
+        id="menu_cafe_order"
+        name="Orders"
+        parent="menu_cafe_root"
+        action="action_cafe_order_takeaway"/>
+
+    <!-- SubMenu cho Orders -->
+    <menuitem
+        id="menu_cafe_order_takeaway"
+        name="Take Away Orders"
+        parent="menu_cafe_order"
+        action="action_cafe_order_takeaway"/>
+    <menuitem
+        id="menu_cafe_order_dinein"
+        name="Dine In Orders"
+        parent="menu_cafe_order"
+        action="action_cafe_order_dinein"/>
+
+    <!-- Menu cho Table -->
+    <menuitem
+        id="menu_cafe_table"
+        name="Tables"
+        parent="menu_cafe_root"
+        action="action_cafe_table"/>
+</odoo>

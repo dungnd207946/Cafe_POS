@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree View cho Menu -->
+        <record id="view_cafe_menu_tree" model="ir.ui.view">
+            <field name="name">cafe.menu.tree</field>
+            <field name="model">cafe.menu</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View cho Menu -->
+        <record id="view_cafe_menu_form" model="ir.ui.view">
+            <field name="name">cafe.menu.form</field>
+            <field name="model">cafe.menu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="price"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action mở view cho Menu -->
+        <record id="action_cafe_menu" model="ir.actions.act_window">
+            <field name="name">Cafe Menu</field>
+            <field name="res_model">cafe.menu</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>
